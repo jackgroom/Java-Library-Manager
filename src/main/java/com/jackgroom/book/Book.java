@@ -19,6 +19,7 @@ public class Book {
         this.releaseDate = releaseDate;
         this.price = price;
         this.quantity = 1;
+        System.out.println("Hello");
     }
 
     public int getQuantity() {
