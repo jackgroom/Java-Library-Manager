@@ -22,11 +22,7 @@ public class BookService {
                 .map(book -> {
                     book.incrementQuantity();
                     return book;
-                }).orElseGet(() -> {
-                    Book newBook = new Book(name, author, genre, releaseDate, price);
-                    TemporaryDatabase.addBook(newBook);
-                    return newBook;
-                });
+                }).orElseGet(() -> TemporaryDatabase.addBook(name, author, genre, releaseDate, price));
     }
 
     public static Book getBookByName(String name) {
